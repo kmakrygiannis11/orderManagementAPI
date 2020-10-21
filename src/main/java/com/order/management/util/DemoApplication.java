@@ -1,4 +1,4 @@
-package com.example.demo;
+package com.order.management.util;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
