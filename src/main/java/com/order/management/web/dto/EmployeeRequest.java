@@ -3,6 +3,7 @@ package com.order.management.web.dto;
 import java.io.Serializable;
 import java.util.Date;
 
+import com.fasterxml.jackson.annotation.JsonFormat;
 import com.order.management.util.Constants.Role;
 
 public class EmployeeRequest implements Serializable {
@@ -15,6 +16,7 @@ public class EmployeeRequest implements Serializable {
 	
 	private String nickName;
 
+	@JsonFormat(pattern="dd/MM/yyyy")
 	private Date registrationDate;
 
 	private Role role;

@@ -14,6 +14,7 @@ import javax.persistence.Table;
 import javax.persistence.Temporal;
 import javax.persistence.TemporalType;
 
+import com.fasterxml.jackson.annotation.JsonFormat;
 import com.order.management.util.Constants;
 import com.order.management.util.Constants.Role;
 
@@ -34,11 +35,12 @@ public class Employee implements Serializable {
 	@Column(name = "SURNAME")
 	private String surname;
 	
-	@Column(name = "NICKNAME", unique = true)
+	@Column(name = "NICKNAME")
 	private String nickName;
 
 	@Column(name = "REGISTRATION_DATE")
 	@Temporal(TemporalType.TIMESTAMP)
+	@JsonFormat(pattern="dd/MM/yyyy")
 	private Date registrationDate;
 
 	@Column(name = "ROLE")
