@@ -5,7 +5,7 @@ Focused on simplicity and detail, it brings management and employees on a produc
 
 ## Overview
 
-<a href="https://play.google.com/store/apps/details?id=com.alex.diafaneia&hl=el"> <p align="center"><img src="docs/graphic%20material/order-unsplash.jpg" width=800 align=center/></p></a>
+<a href="https://play.google.com/store/apps/details?id=com.alex.diafaneia&hl=el"> <p align="center"><img src="docs/graphic%20material/demo.jpg" width=800 align=center/></p></a>
 
 ### The application features: 
 * RESTful API service
