@@ -7,7 +7,10 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
 
+import springfox.documentation.swagger2.annotations.EnableSwagger2;
+
 @Controller
+@EnableSwagger2
 @SpringBootApplication(scanBasePackages = "com.order.management")
 public class Launcher {
 

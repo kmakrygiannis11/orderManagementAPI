@@ -4,7 +4,6 @@ import java.util.Date;
 import java.util.List;
 import java.util.Optional;
 
-import javax.persistence.EntityExistsException;
 import javax.persistence.EntityNotFoundException;
 
 import org.slf4j.Logger;
@@ -38,7 +37,7 @@ public class EmployeesImpl implements Employees {
 		employee.setNickName(nickName);
 		employee.setRegistrationDate(registrationDate);
 		employee.setRole(role);
-		employeeDAO.save(employee);
+		employeeDAO.saveAndFlush(employee);
 		return employee;
 	}
 
