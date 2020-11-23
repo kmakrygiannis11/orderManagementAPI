@@ -28,14 +28,14 @@ public class EmployeesImpl implements Employees {
 
 	@Override
 	@Transactional(propagation = Propagation.REQUIRED, rollbackFor = Exception.class)
-	public Employee addEmployee(String name, String surname, String nickName, Date registrationDate, Role role) {
+	public Employee addEmployee(String name, String surname, String nickName, Role role) {
 
 		log.info("START addEmployee: name={}", name);
 		Employee employee = new Employee();
 		employee.setName(name);
 		employee.setSurname(surname);
 		employee.setNickName(nickName);
-		employee.setRegistrationDate(registrationDate);
+		employee.setRegistrationDate(new Date());
 		employee.setRole(role);
 		employeeDAO.saveAndFlush(employee);
 		return employee;
@@ -63,20 +63,21 @@ public class EmployeesImpl implements Employees {
 		employee.setName("Yiannis");
 		employee.setSurname("Simou");
 		employee.setRegistrationDate(new Date());
-		employee.setRole(Role.CASHIER);	
+		employee.setRole(Role.CASHIER);
 		employeeDAO.saveAndFlush(employee);
 	}
 
 	@Override
 	@Transactional(propagation = Propagation.REQUIRED, rollbackFor = Exception.class)
-	public Employee updateEmployee(long id, String name, String surname, String nickName, Date registrationDate, Role role) throws EntityNotFoundException {
+	public Employee updateEmployee(long id, String name, String surname, String nickName, Date registrationDate,
+			Role role) throws EntityNotFoundException {
 		log.info("START updateEmployee: id={}", id);
 		Optional<Employee> employeeOpt = employeeDAO.findById(id);
 		if (!employeeOpt.isPresent()) {
 			log.error("Employee with id {} does not exist", id);
 			throw new EntityNotFoundException();
 		}
-		
+
 		Employee employee = employeeOpt.get();
 		employee.setName(name);
 		employee.setSurname(surname);

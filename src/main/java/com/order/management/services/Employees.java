@@ -12,16 +12,17 @@ import com.order.management.util.Constants.Role;
 
 public interface Employees {
 
-	public Employee removeEmployee( long id ) throws EntityNotFoundException;
+	public Employee removeEmployee(long id) throws EntityNotFoundException;
 
-	public Employee updateEmployee(long id, String name, String surname, String nickname, Date registrationDate, Role role) throws EntityNotFoundException;
+	public Employee updateEmployee(long id, String name, String surname, String nickname, Date registrationDate,
+			Role role) throws EntityNotFoundException;
 
-	public Optional<Employee> retrieveEmployee( long id );
+	public Optional<Employee> retrieveEmployee(long id);
 
 	public List<Employee> retrieveAllEmployees();
 
-	public Employee addEmployee(String name, String surname, String nickname, Date registrationDate, Role role) throws EntityExistsException;
+	public Employee addEmployee(String name, String surname, String nickname, Role role) throws EntityExistsException;
 
-	void test();
+	public void test();
 
 }

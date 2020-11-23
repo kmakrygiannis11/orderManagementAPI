@@ -14,16 +14,34 @@ import springfox.documentation.swagger2.annotations.EnableSwagger2;
 @SpringBootApplication(scanBasePackages = "com.order.management")
 public class Launcher {
 
-    @Value("${spring.application.name}")
-    private String appName;
+	@Value("${spring.application.name}")
+	private String appName;
 
-    public static void main(String[] args) {
+	public static void main(String[] args) {
         SpringApplication.run(Launcher.class, args);
-    }
-	
+        consolePrintLog();
+	}
+
 	@GetMapping("/")
 	public ResponseEntity<String> get() {
-		return ResponseEntity.ok("Welcome to "+ appName +" !");
+		return ResponseEntity.ok("Welcome to " + appName + " !");
+	}
+	
+	private static void consolePrintLog() {
+		// pimp my code style :P
+        System.out.println();
+        System.out.println("                        #                                                                                                                               ");
+        System.out.println("  ###                   #                             #     #                                                                    #     ######    #####  ");
+        System.out.println(" #   #                  #                             ##   ##                                                                    #     #     #     #    ");
+        System.out.println("#     #   # ###    ######   #####    # ###            # # # #   ######  # ####    ######   ######   #####    # ###              ###    #     #     #    ");
+        System.out.println("#     #   ##      #     #  #     #   ##               #  #  #  #     #  ##    #  #     #  #     #  #     #   ##                 # #    ######      #    ");
+        System.out.println("#     #   #       #     #  #######   #                #     #  #     #  #     #  #     #  #     #  #######   #                 #####   #           #    ");
+        System.out.println(" #   #    #       #     #  #         #                #     #  #    ##  #     #  #    ##  #     #  #         #                 #   #   #           #    ");
+        System.out.println("  ###     #        ######   #####    #                #     #   #### #  #     #   #### #   ######   #####    #                ##   ##  #         #####  ");
+        System.out.println("                                                                                                #                                                       ");
+        System.out.println("                                                                                           #####                                                        ");
+        System.out.println();
+
 	}
 
 }

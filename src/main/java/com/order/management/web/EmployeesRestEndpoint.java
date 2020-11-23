@@ -34,8 +34,7 @@ public class EmployeesRestEndpoint {
 	@ApiOperation(value = "addEmployee")
 	@PostMapping("/")
 	public Employee addEmployee(@RequestBody EmployeeRequest request) throws EntityExistsException {
-		return service.addEmployee(request.getName(), request.getSurname(), request.getNickName(),
-				request.getRegistrationDate(), request.getRole());
+		return service.addEmployee(request.getName(), request.getSurname(), request.getNickName(), request.getRole());
 	}
 
 	@ApiOperation(value = "removeEmployee")
@@ -48,9 +47,8 @@ public class EmployeesRestEndpoint {
 	@PutMapping("/{id}")
 	public Employee updateEmployee(@PathVariable long id, @RequestBody EmployeeRequest request)
 			throws EntityNotFoundException {
-		return service
-				.updateEmployee(id, request.getName(), request.getSurname(), request.getNickName(),
-						request.getRegistrationDate(), request.getRole());
+		return service.updateEmployee(id, request.getName(), request.getSurname(), request.getNickName(),
+				request.getRegistrationDate(), request.getRole());
 	}
 
 	@ApiOperation(value = "retrieveEmployee")
